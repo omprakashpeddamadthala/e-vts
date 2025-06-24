@@ -1,0 +1,24 @@
+#Application
+spring:
+  application:
+    name: e-vts
+#Database
+  datasource:
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+    password: changemeinprod!
+#Hiberanate JPA
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: 'true'
+    hibernate:
+      ddl-auto: update
+    show-sql: 'true'
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri=:http://localhost:9090/realm/event-ticket-ptatform
